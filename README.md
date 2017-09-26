@@ -19,25 +19,25 @@ Clone the repository:
 git clone https://github.com/Lauszus/rpi-kivy-wheel.git
 ```
 
-Then simply use the command below to install Kivy 1.10.0:
+Then simply use the commands below to install Kivy 1.10.0:
 
-__Python 2.7__
+__Python 2__
 
 ```bash
 sudo apt-get install python-pygame python-wheel
-sudo pip install rpi-kivy-wheel/kivy-1.10.0/Kivy-1.10.0-cp27-cp27mu-linux_armv7l.whl
+sudo pip install --find-links=rpi-kivy-wheel/kivy-1.10.0 Kivy
 ```
 
-__Python 3.4__
+__Python 3__
 
 ```bash
 sudo apt-get install python3-pygame python3-wheel
-sudo pip3 install rpi-kivy-wheel/kivy-1.10.0/Kivy-1.10.0-cp34-cp34m-linux_armv7l.whl
+sudo pip3 install --find-links=rpi-kivy-wheel/kivy-1.10.0 Kivy
 ```
 
 ## Developers
 
-The packages can be generated using the following steps on a fresh install on Raspbian Lite:
+The packages can be generated using the following steps on a fresh install on Raspbian Lite.
 
 Download the latest version of Kivy:
 
@@ -78,7 +78,7 @@ Now make sure that the wheel is working:
 ```bash
 virtualenv -p $PYTHON kivy-env
 ~/kivy-env/bin/pip install -U pip
-~/kivy-env/bin/pip install rpi-kivy-wheel/Kivy-*-linux_armv7l.whl
+~/kivy-env/bin/pip install --find-links=rpi-kivy-wheel Kivy
 ~/kivy-env/bin/python -c 'import kivy'
 rm -rf kivy-env/
 ```
