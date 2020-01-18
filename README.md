@@ -3,7 +3,7 @@
 #### By Kristian Lauszus, 2017
 _________
 
-A pre-compiled binary of Kivy for the Raspberry Pi. This was compiled on a Raspberry Pi 3 running Raspbian Jessie Lite.
+A pre-compiled binary of Kivy for the Raspberry Pi. This was compiled on a Raspberry Pi 3 running Raspbian Lite.
 
 ## Instructions
 
@@ -19,20 +19,20 @@ Clone the repository:
 git clone https://github.com/Lauszus/rpi-kivy-wheel.git
 ```
 
-Then simply use the commands below to install Kivy 1.10.1:
+Then simply use the commands below to install Kivy 1.11.1:
 
 __Python 2__
 
 ```bash
 sudo apt-get install python-wheel
-sudo pip install --find-links=rpi-kivy-wheel kivy==1.10.1
+sudo pip install --find-links=rpi-kivy-wheel/kivy-1.11.1 kivy==1.11.1
 ```
 
 __Python 3__
 
 ```bash
 sudo apt-get install python3-wheel
-sudo pip3 install --find-links=rpi-kivy-wheel kivy==1.10.1
+sudo pip3 install --find-links=rpi-kivy-wheel/kivy-1.11.1 kivy==1.11.1
 ```
 
 ## Developers
@@ -71,15 +71,15 @@ source rpi-kivy-venv/bin/activate
 Install Python packages:
 
 ```bash
-$PIP install pygments docutils cython==0.28.3
+pip install pygments docutils cython==0.29.9
 ```
 
-In this case I install Cython 0.28.3, as needed by Kivy 1.10.1: <https://kivy.org/docs/installation/installation-linux.html#cython>.
+In this case I install Cython 0.29.9, as needed by Kivy 1.11.1: <https://kivy.org/doc/stable/installation/installation-linux-venvs.html?highlight=cython>.
 
 Now compile the wheel:
 
 ```bash
-$PIP wheel --build=rpi-kivy-build --wheel-dir=rpi-kivy-wheel kivy.zip
+KIVY_SPLIT_EXAMPLES=1 pip -v wheel --wheel-dir=rpi-kivy-wheel kivy.zip
 ```
 
 Now make sure that the wheel is working:
